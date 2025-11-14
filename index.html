@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weisheiten-Generator</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #0B2658; /* Dunkelblau */
+        color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    h1 {
+        color: #DD359C; /* Pink */
+        margin-bottom: 20px;
+    }
+    .slot-container {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .slot {
+        background: rgba(255,255,255,0.05);
+        padding: 20px;
+        border-radius: 12px;
+        width: 240px;
+        text-align: center;
+        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    .slot p {
+        font-size: 1.1em;
+        min-height: 60px;
+        font-weight: 500;
+    }
+    button {
+        border: none;
+        padding: 10px 14px;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 6px;
+        font-size: 1.2em;
+        color: #fff;
+        background: #DD359C; /* Pink */
+        transition: transform 0.1s ease, background 0.2s ease;
+    }
+    button:hover {
+        transform: scale(1.05);
+        background: #c22885; /* etwas dunkleres Pink beim Hover */
+    }
+</style>
+</head>
+<body>
+
+<h1> Weisheiten-Slotmachine</h1>
+
+<div class="slot-container">
+    <div class="slot">
+        <p id="subjektText"></p>
+        <button onclick="rollOne('subjekt')">🎲</button>
+    </div>
+    <div class="slot">
+        <p id="mittelText"></p>
+        <button onclick="rollOne('mittel')">🎲</button>
+    </div>
+    <div class="slot">
+        <p id="objektText"></p>
+        <button onclick="rollOne('objekt')">🎲</button>
+    </div>
+</div>
+
+<button onclick="rollAll()">🎲 ALLES NEU</button>
+
+<script>
+const subjekt = [
+"Das Patriarchat","Die Dummheit der Menschen","Der Sinn des Lebens","Die Integrationsverweigerung",
+"Die Macht der Gewohnheit","Die Furcht vor Freiheit","Der Kapitalismus","Die spirituelle Leere",
+"Die Suche nach Sinn","Die unzählbare Gier","Das kollektive Gedächtnis","Die Tyrannei der Mehrheit",
+"Der Fortschrittsglaube","Die Anbetung des Geldes","Die Blindheit der Eliten","Die Einsamkeit des Geistes",
+"Die Unterdrückung der Sprache","Die Religion des Konsums","Die Naivität der Jugend","Das Monster der Vergangenheit",
+"Die Verdrehung der Wahrheit","Der Zwang zur Leistung","Die Verachtung des Wissens","Der Stolz der Verlierer",
+"Die Unbestechlichkeit der Natur","Die Zerstörung der Vielfalt","Die Gereiztheit der Gegenwart","Die Autorität der Vergangenheit",
+"Das Versagen der Institutionen","Die Verletzlichkeit der Wahrheit","Das Dogma der Vernunft","Die Herrschaft der Angst",
+"Die Schwäche des Helden","Die Erschöpfung der Erde","Die Überheblichkeit der Technik","Die Befreiung der Gedanken",
+"Die Schönheit der Zerstörung","Die Ohnmacht der Justiz","Die Trauer des Fortschritts","Die Hoffnung der Verzweifelten",
+"Die Überproduktion der Angst","Die Verachtung der Freiheit","Das Schweigen der Opfer","Die Gier der Wenigen",
+"Die Fixierung auf Macht","Die Apathie der Masse","Die Geburt des Zorns","Die Illusion der Kontrolle",
+"Die Rückkehr der Barbarei","Die Sehnsucht nach Stille","Die Lähmung des Willens"
+];
+
+const mittel = [
+"war schon immer","steht im Schatten von","verbirgt sich hinter","tanzt unbeirrt",
+"schreitet langsam","wächst unbemerkt","klammert sich fest","lächelt verstohlen",
+"treibt unaufhörlich","schläft selten","verharrt endlos","marschiert unermüdlich",
+"ertrinkt mutwillig","flüstert still","frisst sich durch","stolpert unbeholfen",
+"hockt geduldig","formt heimlich","verbrennt freiwillig","schläft leicht",
+"wächst stetig","fliegt schwer","steht reglos","schleicht leise",
+"schlägt wortlos","feiert laut","blutet ständig","hängt müde",
+"kriecht lautlos","grinst träge","rollt unaufhaltsam","seufzt unhörbar",
+"schwimmt mühsam","bäumt sich auf","pocht stetig","stolpert gelegentlich",
+"leuchtet heimlich","wickelt sorgfältig","hängt regungslos","flackert schwach",
+"brennt unaufhaltsam","steht wie ein Monument","fault leise","zündet bereitwillig",
+"stapft beharrlich","fliegt ziellos","pulsiert stark","zerbricht langsam",
+"plätschert unbemerkt","schreit innerlich","wächst heimlich"
+];
+
+const objekt = [
+"die Wurzel aller Illusionen","der Chance zum Erfolg","dem Abgrund der Gewissheit","auf den Trümmern der Hoffnung",
+"ins Tal der Vergessenheit","im Haus der Lügen","an den Knochen des Fortschritts","in den Augen der Verzweiflung",
+"durch das Meer der Möglichkeiten","unter dem Dach der Moral","in den Archiven des Schweigens","in die Wüste der Wahrheit",
+"im Sumpf der Tradition","ins Ohr der Unschuld","den Körper der Demokratie","über die Schwelle der Erkenntnis",
+"im Schatten der Macht","den Tempel der Selbsttäuschung","im Feuer der Erfahrung","unter dem Teppich der Geschichte",
+"in den Hallen der Erinnerung","durch die Wolken der Furcht","am Tor des Verfalls","in den Garten der Vergebung",
+"auf den Tisch der Menschheit","im Saal der Eintönigkeit","in den Armen der Zukunft","in den Seilen der Erinnerung",
+"durch die Ritzen der Verantwortung","in den Spiegel der Macht","in den Abgrund der Absurdität","im Schlaf der Tapferkeit",
+"im Fluss der Enttäuschung","gegen den Strom der Gier","im Herzen der Zivilisation","in den Pfad der Unterwerfung",
+"im Dunst des Neubeginns","das Paket der Unterdrückung","an der Wand der Geschichte","in der Kerze der Zuflucht",
+"durch das Gewebe der Vernunft","im Park der Möglichkeiten","im Keller der Erinnerung","den Funken der Ungleichheit",
+"zum Gipfel der Selbstzerstörung","durch die Halle der Zukunft","im Herz der Ungerechtigkeit","an der Mauer der Zufälle",
+"durch den Fluss der Geschichte","im Chor der Welt","in den Knochen der Entscheidung"
+];
+
+function rollOne(type) {
+    if (type === 'subjekt') {
+        document.getElementById('subjektText').textContent = subjekt[Math.floor(Math.random()*subjekt.length)];
+    } else if (type === 'mittel') {
+        document.getElementById('mittelText').textContent = mittel[Math.floor(Math.random()*mittel.length)];
+    } else if (type === 'objekt') {
+        document.getElementById('objektText').textContent = objekt[Math.floor(Math.random()*objekt.length)];
+    }
+}
+
+function rollAll() {
+    rollOne('subjekt');
+    rollOne('mittel');
+    rollOne('objekt');
+}
+</script>
+
+</body>
+</html>
