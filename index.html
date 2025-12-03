@@ -78,47 +78,48 @@
 
 <script>
 const subjekt = [
-"Das Patriarchat","Der toxische Kapitalismus","Der Rechtsruck","Die Klimakatastrophe","Die Massentierhaltung",
-"Die Schlachthöfe der Gier","Der Rassismus im Anzug","Die Queerfront","Die Antifa","Das Tempolimit der Gerechtigkeit",
-"Die Veganisierung der Welt","Der Genderstern","Die Cancel-Culture","Das brennende Amazonasbeet","Der Kohleausstieg",
-"Die Ausbeutung der Natur","Die Regenbogenkoalition","Der Klassenkampf","Der ökologische Widerstand","Die Solidarität der Massen",
-"Die Seenotrettung","Die Abschaffung der Grenze","Die Fridays-for-Future-Armee","Das linke Meme-Kommando","Der Shitstorm gegen Hass",
-"Die feministischen Feuerlöscher","Der Anti-Kohle-Block","Die Lastenrad-Legion","Der Klimastreik","Die Revolution der Schneeflocken",
-"Das Grundeinkommen auf Steroiden","Der rote Biohof","Die sozialistische Keksfabrik","Die Gleichstellungs-Front","Die barrikadenbauenden Genoss*innen",
-"Das Anti-Faschistische Ballett","Die Entwaffnung der Polizei","Die Rettung des Eisbären","Die faire Schokolade","Der intersektionale Widerstand",
-"Die Kappung der Reichen","Die radikale Fahrradbrigade","Das Sojamilch-Kollektiv","Die globale Klimarettung","Das Menschenrechts-Kommando",
-"Der nachhaltige Widerstand","Die Befreiung des Huhns","Die politisch korrekte Kommune","Der Stoppt-die-AfD-Express","Die Entdeckung des Genderplaneten",
-"Die Anti-Rassismus-Liga","Die Zero-Waste-Revolution","Der antifaschistische Fanklub","Die Klimakunst-Karawane","Das Umwelttribunal",
-"Die Demokratie-Retter","Der Wasserstoff-Aufstand","Die Blockade der Ölmultis","Die Rüstungskritik-Front","Die Solar-Feministinnen",
-"Das radikale Tierwohl-Komitee","Die Menschenrechts-Defenders","Die Öko-Marxisten","Der Umverteilungsrat","Die Antikapitalismus-Stage",
-"Die CO2-Befreiungsfront","Das vegane Guerrilla-Beet","Die Klima-Alarm-Genossenschaft","Der Trockenrasen-Aufstand","Die Barrikade des Guten",
-"Die Greenpeace-Avantgarde","Die antifaschistische Baumhauscrew","Das Rote-Panda-Kollektiv","Die Schulstreik-Syndikate","Das Fahrrad-Phalanx",
-"Die Equality-Taskforce","Der Hanf-Revolutionsbund","Die Küstenrettung","Das Bananenbündnis gegen Hass","Der Walross-Club für Gerechtigkeit",
-"Die Gender-Revolution","Der Solidaritäts-Zirkus","Die Umwelt-Einhornstaffel","Der Demokratie-Club","Die radikale Plankton-Union",
-"Die Erneuerbaren-Armee","Die postkoloniale Brigade","Die Klimafolgen-Kommune","Der Pelzfrei-Pakt","Die Eisbärenpartei"
+"Das Patriarchat","Der Kapitalismus","Die AfD","Die Klimakrise","Die Fleischindustrie",
+"Die Reichen","Die Ölkonzerne","Die Antifa","Die Linke","Das Tempolimit",
+"Die Veganer","Die Gender-Debatte","Twitter","Das Klima","Die Kohle",
+"Die Umwelt","Die LGBTQ-Community","Die Arbeiterklasse","Fridays for Future","Die Memes",
+"Die Seenotrettung","Offene Grenzen","Greta Thunberg","Die linke Bubble","Der Shitstorm",
+"Die Feministinnen","Die Grünen","Die Lastenräder","Der Klimastreik","Die Generation Z",
+"Das Grundeinkommen","Der Bio-Laden","Die Gleichberechtigung","Die Genossen","Die Polizei",
+"Die Demo","Die Windkraft","Der Eisbär","Fairtrade","Die Diversity",
+"Die Superreichen","Das Fahrrad","Die Sojamilch","Die Erde","Die Menschenrechte",
+"Die Nachhaltigkeit","Die Tierrechte","Die WG","Die Nazis","Der Genderstar",
+"Black Lives Matter","Zero Waste","Die Punks","Die Straßenblockade","Die Umweltschützer",
+"Die Demokratie","Wasserstoff","Shell","Die Rüstungsindustrie","Die Solarpanels"
 ];
 
 const mittel = [
-"zerschmettert fröhlich","singt laut im Plenum","tanzt barfuß auf dem Plakat","ruft „Enteignet!“ ohne zu atmen","gendered konsequent","sabotiert Kapital ganzheitlich","demonstriert powered by Soja","blockiert die Kohlekraft","rettet Schildkröten aus Netzen","erklärt Patriarchat für erledigt",
-"streikt im Parkett","bastelt Barrikaden aus Bambus","klimatisiert den Klassenkampf","bemalt Barrikaden nachhaltig","kämpft intersektional","backt marxistische Brownies","pustet Windkraft in die Straßen","installiert Revolution als App","verteilt vegane Aufkleber","schwenkt das Banner der Vielfalt",
-"stoppt Massentierhaltung","demontiert Schlachthöfe","kompostiert den Kapitalismus","befreit den Regenwald","schreibt Pamphlete im Genderstern-Format","verkabelt das Windrad","schubst SUVs ins Off","verhindert Abholzung","verteilt Tofu auf Demos","organisiert Klima-Partys",
-"haut Kohlelobbyisten aus Sitzungen","streamt den Generalstreik","postet Hashtags mit Linksdrall","hacked das Patriarchat","brüht Kaffee für die Avantgarde","brüllt im Klima-Chor","blockiert Nazidemos","flirtet politisch korrekt","marschiert für LGBTQ+","öffnet Grenzen",
-"entwaffnet Nationalisten","verhindert Ölbohrungen","faltet Transparente","rettet Pinguine","plakatiert Gleichstellung","schraubt Solarpanele aufs Dach","schubst Multis aus der Stadt","feiert Vielfalt im Park","zündet Hoffnung","schenkt Kekse auf Demos",
-"besetzt Kohlebagger","spricht auf Klima-Gipfeln","trällert Protestlieder","hält Mahnwachen im Dauerregen","gründet Kollektivsuppen-Küchen","bastelt Gender-Workshops","rettet Bienenköniginnen","spendet Blut für die Sache","gärt Guerilla-Gemüse","hisst antifaschistische Fahnen",
-"unsilaert Hassparolen","streamt Live aus Demos","schreibt Gender-Leitfäden","malt Parolen im Morgengrauen","espaltiert Feinstaubfilter","plant Sitzblockaden","cum-exiert Kapitalisten aus","verteilt Care-Pakete","übermalt rechte Schmierereien","hoppst auf Klimastreiks",
-"diskutiert bis zum Sonnenaufgang","kocht Linsensuppe für 400","entwirft Sticker gegen Hass","öffnet Umsonstläden","verschickt Massenmails gegen Rüstung","beendet Rodungen","trägt sauteure Fairtrade-Pullover","setzt Rettungsboote ins Wasser","bastelt Glitzertransparente","entwickelt Pläne für Systemwandel"
+"revolutioniert mit sanfter Gewalt","argumentiert bis zur Heiserkeit","überzeugt durch beharrliches Schweigen","demonstriert höflich aber bestimmt",
+"diskutiert sich ins Recht","erklärt die Welt in drei Sätzen","rettet mit gezielter Ironie","kämpft mit scharfem Verstand",
+"analysiert bis zum Umfallen","kritisiert konstruktiv destruktiv","hinterfragt alles zweimal","deckt Widersprüche auf",
+"entlarvt mit einem Lächeln","sammelt Argumente wie Briefmarken","widerlegt durch Anwesenheit","übertreibt maßvoll",
+"protestiert mit Bedacht","boykottiert strategisch klug","organisiert spontan geplant","rebelliert nach Vorschrift",
+"streikt diszipliniert chaotisch","blockiert den Weg nach vorn","öffnet Augen durch Kopfschütteln","weckt Gewissen mit Samthandschuhen",
+"predigt für Ungläubige","missioniert Missionare","bekehrt Bekehrte","überzeugt Überzeugungstäter",
+"kämpft für den Frieden","hasst den Hass","toleriert Intoleranz nicht","liebt liebevoll",
+"rettet durch Zerstörung","baut durch Abbau auf","vereint durch Trennung","schafft Ordnung im Chaos",
+"lehrt durch Lernen","führt durch Folgen","gewinnt durch Verlieren","siegt durch Niederlage",
+"spricht durch Schweigen","handelt durch Denken","bewegt durch Stillstand","verändert durch Beharren"
 ];
 
 const objekt = [
-"im Genderstern der Revolution","in den Herzen der Genoss*innen","auf dem Sitzsack der Gerechtigkeit","unter dem Regenbogen der Enteignung","auf dem Fahrradweg zur Utopie","im Sojamilch-Meer der Vernunft","durch den TikTok der Befreiung","im Bio-Kompost der Werte","mitten im Lastenrad der Demokratie","unter der Fahne der Fridays",
-"im Keks der Klassenlosigkeit","im WiFi der Solidarität","auf der Picknickdecke des Widerstands","in der biometrischen Barrikade","mit dem Megaphon der Hoffnung","auf dem Dach der Nachhaltigkeit","im Podcast der Revolution","in der Playlist der Befreiung","hinter dem Banner der Menschenrechte","im Livestream der Gerechtigkeit",
-"auf dem Parkett der Empörung","unter dem Sonnenschirm des Sozialismus","im Feenstaub der Freiheit","mit den Stickern der Zukunft","auf den Dächern der Klimagerechtigkeit","im Windrad der Hoffnung","in der Cloud der Solidarität","hinter den Memes der Massen","im Hoodie der Gleichstellung","auf der Rolltreppe des Wandels",
-"in der Sprachnachricht der Aufständischen","unter dem Regenschirm der Revolution","im Kochbuch des Kollektivs","in der Laterne des Klassenkampfs","mit dem Graffiti der Gerechtigkeit","auf dem Balkon der Befreiung","im Workshop des Widerstands","unter dem Neonlicht der Vielfalt","in der Playlist gegen Unterdrückung","auf dem Teppich der Genossenschaft",
-"mit dem Stoffbeutel der Freiheit","unter der Discokugel des Kollektivs","im E-Mail-Verteiler der Revolution","in der Shitstorm-Flut der Wahrheit","auf der Bühne der Weltrettung","unter dem Glitzerhelm des Widerstands","auf der Palette der Protestkunst","im Zeltlager der Zukunft","unter dem Pappbanner der Solidarität","mit der Tuba der Emanzipation",
-"in den Straßen der Gerechtigkeit","auf der Kreuzung der Vielfalt","am Lagerfeuer des Widerstands","im strahlenden Solarpark","auf der Mauer der Hoffnung","unter den Bannern der Liebe","im globalen Klima-Chat","mitten im fairen Wochenmarkt","in der Arkade der Vielfalt","auf dem Vorplatz der Gleichheit",
-"unter dem Kletterbaum des Friedens","auf den Schienen der Enteignung","im Hörsaal der Proteste","im Boot der Solidarität","unter der Lichterkette der Mahnwachen","im letzten Standbein der Demokratie","im Studio der Weltverbesserer","am Mikrofon der Freiheit","unter dem Wolkenkratzer des Umdenkens","im Pavillon der Hoffnung",
-"auf dem Festival der Gerechtigkeit","auf der Demo-Route des Wandels","mit dem Kompass der Solidarität","auf dem Teppich der Toleranz","in der Jury der Menschlichkeit","unter der Plane des Aufbruchs","im Waggon der Weltrettung","unter dem Regendach der Gleichheit","auf dem Traktor der Bauernproteste","in der Trommel der Vielfalt",
-"unter der Laterne der Aufklärung","im Zirkuszelt des Protests","auf der Slackline der Demokratie","im Café der Vielfalt","unter den Seifenblasen der Freiheit","im Gewächshaus der Zukunft","auf den Steinen der Erinnerung","unter der Kapuze der Revolution","im Fahrstuhl der Solidarität","auf der Mauer der Freundschaft"
+"im Kampf um die Wahrheit","in der Seele der Gesellschaft","im Herzen des Wandels","auf dem Weg zur Befreiung",
+"in den Träumen der Unterdrückten","im Geist der Revolution","in der Hoffnung auf morgen","im Schatten der Macht",
+"zwischen den Zeilen der Geschichte","in der Stille des Protests","im Echo der Gerechtigkeit","in der Kraft der Solidarität",
+"im Spiegel der Zeit","in der Waage der Moral","im Sturm der Veränderung","in der Tiefe des Bewusstseins",
+"am Scheideweg der Menschheit","im Labyrinth des Systems","in der Dunkelheit vor der Dämmerung","im Licht der Erkenntnis",
+"zwischen Sein und Schein","in der Dialektik der Macht","im Fluss der Geschichte","in der Matrix der Unterdrückung",
+"im Paradox der Freiheit","in der Logik des Kapitalismus","im Chaos der Ordnung","in der Ruhe vor dem Sturm",
+"im Zentrum des Universums","in der Leere des Konsums","im Rausch der Rebellion","in der Klarheit des Moments",
+"zwischen Himmel und Erde","in der Ewigkeit des Augenblicks","im Kreislauf der Ungerechtigkeit","in der Spirale des Wandels",
+"im Prisma der Perspektiven","in der Symphonie des Widerstands","im Theater der Absurden","in der Poesie des Protests",
+"im Labyrinth der Gedanken","in der Architektur der Macht","im Vakuum der Politik","in der Gravitation der Gerechtigkeit",
+"zwischen Alpha und Omega","in der DNA der Demokratie","im Quantenfeld der Möglichkeiten","in der Unendlichkeit der Ideen",
+"im Rhythmus des Lebens","in der Melodie der Freiheit","im Takt der Zeit","in der Harmonie der Vielfalt"
 ];
 
 function rollOne(type) {
